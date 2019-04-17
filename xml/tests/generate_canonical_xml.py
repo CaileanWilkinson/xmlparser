@@ -1,10 +1,10 @@
 """
     Generates canonical xml from the given document to test against given xmltest
 """
-from classes.Element import Element
-from classes.Document import Document
-from classes.Text import Text
-from classes.ProcessingInstruction import ProcessingInstruction
+from xml.classes.content.Element import Element
+from xml.classes.document.Document import Document
+from xml.classes.content.Text import Text
+from xml.classes.content.ProcessingInstruction import ProcessingInstruction
 
 
 def canonical_form(document: Document) -> str:

@@ -2,9 +2,9 @@
 import re
 from typing import List, Dict, Optional
 
-from RegularExpressions import RegEx
-from classes.Entity import Entity
-from classes.Error import XMLError, DisallowedCharacterError
+from .RegularExpressions import RegEx
+from .classes.document.Entity import Entity
+from .classes.Error import XMLError, DisallowedCharacterError
 
 """
     =============

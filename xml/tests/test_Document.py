@@ -1,9 +1,9 @@
 import unittest
 
-from classes.Entity import Entity
-from classes.Element import Element
-from classes.Error import XMLError
-from classes.Document import Document
+from xml.classes.document.Entity import Entity
+from xml.classes.content.Element import Element
+from xml.classes.Error import XMLError
+from xml.classes.document.Document import Document
 
 
 class DocumentTests(unittest.TestCase):

@@ -1,11 +1,11 @@
 from typing import List, Dict, Optional, Union
-import Helpers
-from RegularExpressions import RegEx
+from ...Helpers import parse_reference, parse_string_literal
+from ...RegularExpressions import RegEx
 from .ProcessingInstruction import ProcessingInstruction
 from .Text import Text
 from .XMLMarkup import XMLMarkup
-from .Entity import Entity
-from .Error import XMLError, DisallowedCharacterError
+from ..document.Entity import Entity
+from ..Error import XMLError, DisallowedCharacterError
 
 
 class Element(XMLMarkup):
@@ -24,6 +24,7 @@ class Element(XMLMarkup):
             processing_instructions A list of all the processing instructions within this element
                                     (i.e. `content` without the text and elements)
     """
+
     def __init__(self, remaining_xml: str):
         self.__raw_declaration = remaining_xml
         self.__current_text = None  # type: Optional[Text]
@@ -184,10 +185,10 @@ class Element(XMLMarkup):
                                            source=self.__raw_declaration)
 
         # Expand attribute value references & normalise whitespace
-        attribute_value = Helpers.parse_string_literal(attribute_value,
-                                                       general_entities=general_entities,
-                                                       expand_parameter_entities=False,
-                                                       normalise_whitespace=True)
+        attribute_value = parse_string_literal(attribute_value,
+                                               general_entities=general_entities,
+                                               expand_parameter_entities=False,
+                                               normalise_whitespace=True)
 
         # Attribute values must conform to xmlspec::Char
         if not RegEx.CharSequence.fullmatch(attribute_value):
@@ -286,9 +287,9 @@ class Element(XMLMarkup):
                     raise XMLError(f"Infinite recursion within entity {reference}", source=xml)
 
                 # Expand reference and parse as xml
-                expansion_text = Helpers.parse_reference(reference,
-                                                         general_entities=general_entities,
-                                                         expand_parameter_entities=False)
+                expansion_text = parse_reference(reference,
+                                                 general_entities=general_entities,
+                                                 expand_parameter_entities=False)
                 unparsed_xml = self.parse_xml_block(expansion_text, general_entities, seen_entities + [reference])
 
                 # If there is any remaining unparsed xml, expansion text contains an unpaired end-tag so is ill-formed

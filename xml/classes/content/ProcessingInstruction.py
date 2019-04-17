@@ -1,8 +1,8 @@
 from typing import Dict, Optional
-from .Entity import Entity
+from ..document.Entity import Entity
 from .XMLMarkup import XMLMarkup
-from RegularExpressions import RegEx
-from .Error import XMLError, DisallowedCharacterError
+from ...RegularExpressions import RegEx
+from ..Error import XMLError, DisallowedCharacterError
 
 
 class ProcessingInstruction(XMLMarkup):

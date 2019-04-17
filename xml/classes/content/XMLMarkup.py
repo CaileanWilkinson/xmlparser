@@ -1,5 +1,5 @@
 from typing import Dict
-from .Entity import Entity
+from ..document.Entity import Entity
 
 
 class XMLMarkup:

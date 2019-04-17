@@ -1,6 +1,6 @@
-from classes.ProcessingInstruction import ProcessingInstruction
-from tests.mocks.MockEntity import MockEntity
-from classes.Error import XMLError
+from xml.classes.content.ProcessingInstruction import ProcessingInstruction
+from xml.tests.mocks.MockEntity import MockEntity
+from xml.classes.Error import XMLError
 import unittest
 
 

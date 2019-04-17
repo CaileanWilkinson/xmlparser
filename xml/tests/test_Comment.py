@@ -1,5 +1,5 @@
-from classes.Comment import Comment
-from classes.Error import XMLError
+from xml.classes.content.Comment import Comment
+from xml.classes.Error import XMLError
 import unittest
 
 

@@ -1,9 +1,9 @@
 from typing import Dict
 
-from RegularExpressions import RegEx
-from .Entity import Entity
+from ...RegularExpressions import RegEx
+from ..document.Entity import Entity
 from .XMLMarkup import XMLMarkup
-from .Error import XMLError, DisallowedCharacterError
+from ..Error import XMLError, DisallowedCharacterError
 
 
 class Comment(XMLMarkup):

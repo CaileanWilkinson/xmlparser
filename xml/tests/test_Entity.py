@@ -1,6 +1,6 @@
-from classes.Entity import Entity
-from tests.mocks.MockEntity import MockEntity
-from classes.Error import XMLError
+from xml.classes.document.Entity import Entity
+from xml.tests.mocks.MockEntity import MockEntity
+from xml.classes.Error import XMLError
 import unittest
 
 

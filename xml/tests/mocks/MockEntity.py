@@ -1,4 +1,4 @@
-from xml.classes.Entity import Entity
+from xml.classes.document.Entity import Entity
 
 
 class MockEntity(Entity):

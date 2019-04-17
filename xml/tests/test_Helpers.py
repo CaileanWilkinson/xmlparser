@@ -1,6 +1,6 @@
-import Helpers as Helpers
-from tests.mocks.MockEntity import MockEntity
-from classes.Error import XMLError
+import xml.Helpers as Helpers
+from xml.tests.mocks.MockEntity import MockEntity
+from xml.classes.Error import XMLError
 import unittest
 
 

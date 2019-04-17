@@ -1,5 +1,5 @@
-from tests.generate_canonical_xml import canonical_form
-from classes.Error import XMLError
+from .generate_canonical_xml import canonical_form
+from xml.classes.Error import XMLError
 import unittest
 from xml.xml import parse_file
 

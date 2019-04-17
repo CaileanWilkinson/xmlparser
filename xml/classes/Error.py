@@ -1,6 +1,6 @@
 from typing import Optional
 
-from RegularExpressions import RegEx
+from ..RegularExpressions import RegEx
 
 
 class XMLError(Exception):

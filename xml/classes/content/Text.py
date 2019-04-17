@@ -1,7 +1,7 @@
 import re
-from RegularExpressions import RegEx
-import Helpers
-from .Error import XMLError, DisallowedCharacterError
+from ...RegularExpressions import RegEx
+from ...Helpers import parse_reference
+from ..Error import XMLError, DisallowedCharacterError
 
 
 class Text:
@@ -60,7 +60,7 @@ class Text:
                 reference = xml[:end_index + 1]
 
                 # Fetch expansion text
-                expansion_text = Helpers.parse_reference(reference,
+                expansion_text = parse_reference(reference,
                                                          expand_general_entities=False,
                                                          expand_parameter_entities=False)
 

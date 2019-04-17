@@ -1,4 +1,4 @@
-from classes.Document import Document
+from .classes.document.Document import Document
 
 
 def parse(xml: str) -> Document:

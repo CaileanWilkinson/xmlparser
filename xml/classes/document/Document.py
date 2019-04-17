@@ -1,13 +1,13 @@
 import string
 from typing import List, Dict, Optional
 
-import Helpers
-from RegularExpressions import RegEx
-from .Comment import Comment
+from ...Helpers import parse_reference
+from ...RegularExpressions import RegEx
+from ..content.Comment import Comment
 from .Entity import Entity
-from .Error import XMLError
-from .ProcessingInstruction import ProcessingInstruction
-from .Element import Element
+from ..Error import XMLError
+from ..content.ProcessingInstruction import ProcessingInstruction
+from ..content.Element import Element
 
 
 # todo - Rewrite me: I'm a mess.
@@ -373,7 +373,7 @@ class Document:
                     raise XMLError()
 
                 # Expand and parse reference
-                expansion_text = Helpers.parse_reference(reference,
+                expansion_text = parse_reference(reference,
                                                          parameter_entities=self.parameter_entities,
                                                          expand_general_entities=False)
                 unparsed_xml = self.__parse_subset(expansion_text, seen_entities + [reference])

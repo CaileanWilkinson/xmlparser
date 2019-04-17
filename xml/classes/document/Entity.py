@@ -1,7 +1,7 @@
 from typing import Dict, Optional
 
-from RegularExpressions import RegEx
-from .Error import XMLError, DisallowedCharacterError
+from ...RegularExpressions import RegEx
+from ..Error import XMLError, DisallowedCharacterError
 
 
 class Entity:
