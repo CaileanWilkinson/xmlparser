@@ -1,0 +1,8 @@
+xml spec refers to the XML 1.0 specification document available at https://www.w3.org/TR/xml/.
+Specifically this code is written to the February 2013 version of the document (most recent).
+
+When validating character sequences I write xmlspec::Blah to refer to the Blah grammar specification in the xml spec,
+written in Extended Backus-Naur Form. These have been translated to regular expressions and can be found in the
+RegularExpressions.py file.
+E.g. xmlspec::Name refers to the Name symbol from section 2.3 defined as:
+Name ::== NameStartChar (NameChar)*

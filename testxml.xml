@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+
+<!DOCTYPE root [
+<!ENTITY blah "BLAH">
+]>
+
+<root>
+    &blah;
+
+    &#38;
+
+    <one blah='&blah;'>
+
+    </one>
+</root>
